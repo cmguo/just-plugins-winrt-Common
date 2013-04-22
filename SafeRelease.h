@@ -1,0 +1,23 @@
+//-----------------------------------------------------------------------------
+// File: SafeRelease.h
+// Desc: SafeRelease
+//
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+//
+//  Copyright (C) Microsoft Corporation. All rights reserved.
+//-----------------------------------------------------------------------------
+
+#pragma once
+
+template <class T> void SafeRelease(T **ppT)
+{
+    if (*ppT)
+    {
+        (*ppT)->Release();
+        *ppT = NULL;
+    }
+}
+
