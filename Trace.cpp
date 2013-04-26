@@ -44,7 +44,7 @@ void PrintSampleInfo(IMFSample *pSample)
     spBuffer->Lock(&pByte, &cbMaxLen, &cbCurLen);
     if (cbCurLen >= sizeof(LONGLONG))
     {
-        DBGMSG(L"Sample beginning bytes: 0x%I64x\n", *(LONGLONG*)pByte);
+        DBGMSG(L"Sample beginning bytes: 0x%.16I64x\n", *(LONGLONG*)pByte);
     }
 
     PrintAttributes(pSample);

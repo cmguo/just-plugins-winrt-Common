@@ -17,7 +17,6 @@ enum
 extern DWORD g_dwTraceLevel;
 void Trace(DWORD dwLevel, LPCWSTR pszFormat, ...);
 void TraceError(LPCSTR pszFile, long nLine, LPCSTR pszFunc, const void * pThis, HRESULT hr);
-void PrintAttributes(IMFAttributes *pAttributes);
 void PrintSampleInfo(IMFSample *pSample);
 void PrintMediaType(IMFMediaType *pType);
 
