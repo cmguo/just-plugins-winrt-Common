@@ -484,5 +484,18 @@ LPCWSTR GetGUIDNameConst(const GUID& guid)
     IF_EQUAL_RETURN(guid, MFSampleExtension_DeviceTimestamp);
 #endif
 
+    IF_EQUAL_RETURN(guid, IID_IMFMediaEventGenerator);
+    IF_EQUAL_RETURN(guid, IID_IMFMediaSource);
+    IF_EQUAL_RETURN(guid, IID_IMFGetService);
+    IF_EQUAL_RETURN(guid, IID_IMFRateControl);
+    IF_EQUAL_RETURN(guid, IID_IMFRateSupport);
+    IF_EQUAL_RETURN(guid, IID_IMFQualityAdvise);
+    IF_EQUAL_RETURN(guid, IID_IMFQualityAdvise);
+
+    IF_EQUAL_RETURN(guid, MFNETSOURCE_STATISTICS_SERVICE);
+    IF_EQUAL_RETURN(guid, IID_IPropertyStore);
+    IF_EQUAL_RETURN(guid, IID_IUnknown);
+    IF_EQUAL_RETURN(guid, IID_IMFTrustedInput);
+
     return NULL;
 }

@@ -19,6 +19,16 @@ void Trace(DWORD dwLevel, LPCWSTR pszFormat, ...);
 void TraceError(LPCSTR pszFile, long nLine, LPCSTR pszFunc, const void * pThis, HRESULT hr);
 void PrintSampleInfo(IMFSample *pSample);
 void PrintMediaType(IMFMediaType *pType);
+LPCWSTR GetGUIDNameConst(const GUID& guid);
+
+HRESULT WindowsPropertySetFind(
+    ABI::Windows::Foundation::Collections::IPropertySet *pConfigurations, 
+    ComPtr<IInspectable> & cpValue);
+
+template <typename Interface>
+HRESULT WindowsPropertySetFind(
+    ABI::Windows::Foundation::Collections::IPropertySet *pConfigurations, 
+    Interface ** pValue);
 
 #if 1
 #define TRACE Trace
