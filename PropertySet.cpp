@@ -54,19 +54,19 @@ HRESULT PropertySetSet(
 
     TRACEHR_RET(hr);
 }
-/*
+
 HRESULT PropertySetAddSubMap(
     ComPtr<IPropertySet> & spPropertySet, 
     LPCWSTR key, 
     ComPtr<IPropertySet> & spSubMap)
 {
     ComPtr<IMap<HSTRING, IInspectable*> > spMap;
-    ComPtr<IPropertySet> spValue;
+    ComPtr<IInspectable> spValue;
 
     HRESULT hr = spPropertySet.As(&spMap);
     if (SUCCEEDED(hr))
     {
-        hr = GetActivationFactory(
+        hr = ::RoActivateInstance(
             HStringReference(RuntimeClass_Windows_Foundation_Collections_PropertySet).Get(),
             &spValue);
     }
@@ -75,7 +75,10 @@ HRESULT PropertySetAddSubMap(
         boolean replaced = false;
         hr = spMap->Insert(HStringReference(key).Get(), spValue.Get(), &replaced);
     }
+    if (SUCCEEDED(hr))
+    {
+        hr = spValue.As(&spSubMap);
+    }
 
     TRACEHR_RET(hr);
 }
-*/
